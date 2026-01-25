@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>早池峰設備工業</h1>
+            <div class="header-logo">
+                <a class="TEL">まずはご相談から<strong>TEL019-600-0000</strong></a>
+                <ul>
+                    <a href="#">ニュース</a>
+                    <a href="#">事業内容</a>
+                    <a href="#">会社情報</a>
+                    <a href="#">採用情報</a>
+                    <a href="#">お問い合わせ</a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    {% block body %}{% endblock %}
+
+    <footer>
+        <div class="footer-logo">
+            <ul><h3>ニュース</h3>
+                <li><a href="#">ニュース</a></li>
+            </ul> 
+            <ul><h3>事業内容</h3>
+                <li><a href="#">素早い対応</a></li>
+                <li><a href="#">実績</a></li>
+                <li><a href="#">対象地域</a></li>
+            </ul>
+            <ul><h3>会社情報</h3>
+                <li><a href="#">会社概要・対象地域</a></li>
+                <li><a href="#">企業理念</a></li>
+                <li><a href="#">他社との違い</a></li>
+                <li><a href="#">営業時間</a></li>
+            </ul>
+            <ul><h3>採用情報</h3>
+                <li><a href="#">採用メッセージ</a></li>
+                <li><a href="#">社員の声</a></li>
+                <li><a href="#">募集要項</a></li>
+            </ul> 
+            <ul>
+                <h3>お問い合わせ</h3>
+            </ul>
+        </div>
+
+        <div class="footer-content">
+            <p>©2025 Hayachine Plant Engineering All Rights Reserved.</p>
+            <a href="#">盛岡市ホームページ</a>
+        </div>
+    </footer>
+</body>
+{% block js %}{% endblock  %}
+</html>

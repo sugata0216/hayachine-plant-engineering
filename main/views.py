@@ -23,3 +23,12 @@ def news_detail(request):
         'image': 'news-detail-1.jpg'
     }
     return render(request, 'main/news_details.html', context)
+
+def recruitment(request):
+    return render(request, "main/recruit_ment.html")
+
+def business_activities(request):
+    return render(request, "main/business_activities.html")
+
+def company_information(request):
+    return render(request, "main/company_information.html")

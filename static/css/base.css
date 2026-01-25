@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+* {
+    font-family: '游ゴシック', 'Yu Gothic';
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color: #ffffff;
+    background-color: #ffffff;
+    display: flex;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    
+}
+
+.footer-logo{
+    display: flex;
+}
+
+.footer-content{
+    display: flex;
+    margin: 15px 20px;
+}
+
+.footer-content p{
+    margin-right: 690px;
+    font-size: 15px;
+}
+
+.footer-content a{
+    border-bottom: solid 1px #ffffff;
+}
+
+footer{
+    background-color: #004D0D; 
+    bottom: 0;
+    position: fixed;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+footer ul{
+    display: block;
+    margin: 15px 75px 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header {
+    background-color: #004D0D; 
+    top: 0;
+    position: fixed;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px 0;
+
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header ul{
+    display: flex;
+}
+
+header ul a{
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.header-logo{
+    display: block;
+    flex-direction: column;
+    
+
+}
+
+.TEL{
+    font-size: 18px;
+    padding-left: 230px;
+}
+
+header h1{
+    margin-left: 40px;
+    font-size: 40px;
+}
