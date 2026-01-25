@@ -1,11 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ニュース</title>
+    <link rel="stylesheet" href="{% static "css/news.css" %}">
+    <link rel="stylesheet" href="{% static 'css/contact_cta.css' %}">
 </head>
 <body>
+    <div class="news-section">
+    <h2 class="section-title">過去のニュース</h2>
     
+    <div class="news-scroll-container">
+        <div class="news-list">
+            {% for item in news_list %}
+        <div class="news-row">
+            <span class="category-label {{ item.category }}">
+                {{ item.category_name }}
+            </span>
+            <span class="news-date">{{ item.date }}</span>
+            <span class="news-title">{{ item.title }}</span>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    {% include "components/contact_cta.html" %}
+    </div>
 </body>
 </html>
