@@ -1,11 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ニュース詳細</title>
+    <link rel="stylesheet" href="{% static "css/news_details.css" %}">
+    <link rel="stylesheet" href="{% static "css/contact_recruit_cta.css" %}">
 </head>
 <body>
-    
+    <main class="news-detail-main">
+        <article class="news-detail-container">
+            <header class="news-detail-header">
+                <h1 class="news-detail-title">お仕事体験の様子のご紹介</h1>
+                <time class="news-detail-date">2025.10.22</time>
+            </header>
+            
+            <div class="news-detail-divider"></div>
+            
+            <div class="news-detail-content">
+                <div class="news-detail-image">
+                    <img src="{% static 'images/news-detail-1.jpg' %}" alt="お仕事体験の様子">
+                </div>
+                
+                <div class="news-detail-text">
+                    <p>お仕事体験にご参加いただきありがとうございました。</p>
+                </div>
+            </div>
+            
+            <div class="news-detail-back">
+                <a href="{% url 'main:news' %}" class="back-button">戻る</a>
+            </div>
+            
+            <div class="news-detail-divider-end"></div>
+        </article>
+    </main>
+    {% include "components/contact_recruit_cta.html" %}
 </body>
 </html>
