@@ -40,3 +40,6 @@ def inquiry_view(request):
 
 def news_post_view(request):
     return render(request, "root/news_post.html")
+
+def admin_login_view(request):
+    return render(request, 'root/admin_login.html')
