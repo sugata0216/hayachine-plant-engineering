@@ -37,3 +37,6 @@ def company_information(request):
  
 def inquiry_view(request):
     return render(request, "main/inquiry.html")
+
+def news_post_view(request):
+    return render(request, "root/news_post.html")
