@@ -1,11 +1,136 @@
-<!DOCTYPE html>
+{% load static %}
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お問い合わせフォーム</title>
+    <link rel="stylesheet" href="{% static 'css/inquiry.css' %}" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="title_h1">
+        <h1>お問い合わせフォーム</h1>
+      </div>
+
+      <div class="genre">
+        <p>顧客ジャンル</p>
+      </div>
+      <div class="radio">
+        <label for="fix"
+          ><input type="radio" name="genre" id="fix" />修理・故障</label
+        >
+        <label for="company"
+          ><input type="radio" name="genre" id="company" />企業</label
+        >
+        <label for="inquiry"
+          ><input
+            type="radio"
+            name="genre"
+            id="inquiry"
+          />採用に関するお問い合わせ</label
+        >
+      </div>
+
+      <div class="genre">
+        <p>個人情報入力フォーム</p>
+      </div>
+
+      <div class="form">
+        <div class="component">
+          <div class="label-area">
+            <p class="label-text">名前</p>
+            <span class="required">必須</span>
+          </div>
+          <div class="input-area name-row">
+            <span>姓</span><input type="text" placeholder="例:氷山" required />
+            <span>名</span><input type="text" placeholder="例:玉龍" required />
+          </div>
+        </div>
+        <hr />
+
+        <div class="component">
+          <div class="label-area">
+            <p class="label-text">郵便番号<br />(ハイフンなし)</p>
+            <span class="required">必須</span>
+          </div>
+          <div class="input-area">
+            <input
+              type="text"
+              placeholder="例) 0200021"
+              pattern="\d{3}-?\d{4}"
+              required
+            />
+          </div>
+        </div>
+        <hr />
+
+        <div class="component">
+          <div class="label-area">
+            <p class="label-text">住所</p>
+            <span class="required">必須</span>
+          </div>
+          <div class="input-area">
+            <input
+              type="text"
+              placeholder="例) 岩手県盛岡市中央通3-2-17"
+              required
+            />
+          </div>
+        </div>
+        <hr />
+
+        <div class="component">
+          <div class="label-area">
+            <p class="label-text">写真</p>
+          </div>
+          <div class="input-area">
+            <input type="file" />
+          </div>
+        </div>
+        <hr />
+
+        <div class="component">
+          <div class="label-area">
+            <p class="label-text">電話番号<br />(ハイフンなし)</p>
+            <span class="required">必須</span>
+          </div>
+          <div class="input-area">
+            <input type="tel" placeholder="例) 0196221500" required />
+          </div>
+        </div>
+        <hr />
+
+        <div class="component">
+          <div class="label-area">
+            <p class="label-text">メールアドレス</p>
+            <span class="required">必須</span>
+          </div>
+          <div class="input-area">
+            <input
+              type="email"
+              placeholder="例) h.tamayama.sys24@morijyobi.ac.jp"
+              required
+            />
+          </div>
+        </div>
+        <hr />
+
+        <div class="component">
+          <div class="label-area">
+            <p class="label-text">内容</p>
+            <span class="required">必須</span>
+          </div>
+          <div class="input-area">
+            <textarea placeholder="水道管が破裂しました..." required></textarea>
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <div class="submit-area">
+        <input type="submit" value="送信" class="submit-button" />
+      </div>
+    </div>
+  </body>
 </html>

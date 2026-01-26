@@ -1,0 +1,157 @@
+@charset 'utf-8';
+
+.main {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.title_h1 {
+  border-bottom: solid 5px #333;
+  width: 60%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.genre {
+  border-bottom: solid 2px #333;
+  margin-top: 40px;
+}
+
+.genre p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.radio {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 0;
+}
+
+.radio label {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+/* フォーム全体のレイアウト */
+.form {
+  padding-top: 20px;
+  width: 100%;
+}
+
+.form hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+/* 各行のコンポーネント */
+.component {
+  display: flex;
+  flex-direction: row; /* 横並び */
+  align-items: center; /* 縦方向中央揃え */
+  gap: 20px;
+  width: 100%;
+}
+
+/* 左側のエリア（ラベル＋必須マーク） */
+.label-area {
+  display: flex;
+  justify-content: flex-end; /* 右寄せ */
+  align-items: center;
+  width: 280px; /* ★ここを固定幅にすることで入力欄の頭が揃う */
+  flex-shrink: 0; /* 幅を縮めさせない */
+  gap: 15px;
+  text-align: right;
+}
+
+.label-text {
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 必須マーク */
+.required {
+  color: white;
+  background-color: red;
+  border-radius: 20px;
+  padding: 4px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* 右側のエリア（入力欄） */
+.input-area {
+  flex-grow: 1; /* 残りの幅を埋める */
+  display: flex;
+  align-items: center;
+}
+
+/* 入力フィールドの共通スタイル */
+.input-area input:not([type="file"]),
+.input-area textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* paddingを含めた幅計算 */
+}
+
+.input-area textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* ファイル入力 */
+.input-area input[type="file"] {
+  font-size: 16px;
+}
+
+/* 名前欄の特別調整 */
+.name-row {
+  display: flex;
+  gap: 10px;
+}
+
+.name-row span {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.name-row input {
+  flex: 1; /* 姓と名を均等に広げる */
+}
+
+/* 送信ボタンエリア */
+.submit-area {
+  text-align: center;
+  margin: 40px 0 60px;
+}
+
+input[type="submit"] {
+  padding: 10px 50px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #00c327;
+  border: none;
+  border-bottom: solid #004d0d;
+  border-radius: 20px;
+  color: aliceblue;
+}

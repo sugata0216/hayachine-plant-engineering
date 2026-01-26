@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
+
 # Create your views here.
+
 def index(request):
     return render(request, "main/top.html")
 def news_list_view(request):
@@ -32,3 +34,6 @@ def business_activities(request):
 
 def company_information(request):
     return render(request, "main/company_information.html")
+ 
+def inquiry_view(request):
+    return render(request, "main/inquiry.html")
