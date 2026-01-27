@@ -124,3 +124,6 @@ STATICFILES_DIRS = [
 
 # Where `collectstatic` will collect static files for production.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
