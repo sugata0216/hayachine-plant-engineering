@@ -23,6 +23,7 @@ class Contact(models.Model):
     last_name = models.CharField(verbose_name='姓')
     first_name = models.CharField(verbose_name='名')
     postal_code = models.CharField(verbose_name='郵便番号')
+    address = models.CharField(verbose_name='住所')
     phone_number = models.CharField(verbose_name='電話番号')
     image = models.ImageField(null=True, default=None, upload_to='contact_images/', verbose_name='画像')
     mail = models.EmailField(verbose_name='メールアドレス')
