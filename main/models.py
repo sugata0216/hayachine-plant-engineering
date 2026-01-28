@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Genre(models.Model):
-    genre = models.CharField(max_length=10, verbose_name="ジャンル名")
+    genre = models.CharField(max_length=20, verbose_name="ジャンル名")
     
     def __str__(self):
         return self.genre
