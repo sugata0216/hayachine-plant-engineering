@@ -601,9 +601,9 @@ html, body {
 }
 
 .recruitment-subtitle {
-    font-size: 18px;
+    font-size: 25px;
     margin-bottom: 20px;
-    font-weight: 300;
+    font-weight: bold;
 }
 
 .recruitment-title {
@@ -639,7 +639,7 @@ html, body {
 .recruitment-message {
     font-size: 28px;
     line-height: 1.8;
-    font-weight: 500;
+    font-weight: 550;
     position: relative;
     z-index: 1;
 }
