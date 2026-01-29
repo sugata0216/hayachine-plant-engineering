@@ -7,66 +7,76 @@
 }
 
 html {
-    color: #ffffff;
     background-color: #ffffff;
-    display: flex;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    /* display: flex; */
+    /* padding-top: 8px; */
+    /* padding-bottom: 8px; */
     
 }
-
+.footer-interior {
+    max-width: 90%;  /* width から max-width に変更 */
+    margin: 0 auto;
+    padding: 20px 0;
+}
 .footer-logo{
     display: flex;
-}
-
-.footer-content{
-    display: flex;
-    margin: 15px 20px;
-}
-
-.footer-content p{
-    margin-right: 690px;
-    font-size: 15px;
-}
-
-.footer-content a{
-    border-bottom: solid 1px #ffffff;
-}
-
-footer{
-    background-color: #004D0D; 
-    bottom: 0;
-    position: fixed;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
     width: 100%;
 }
-
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0 0 0;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.footer-content p{
+    margin: 0;
+    font-size: 15px;
+    white-space: nowrap;
+}
+.footer-content a{
+    border-bottom: solid 1px #ffffff;
+    white-space: nowrap;
+}
+footer{
+    color: #ffffff;
+    background-color: #004D0D; 
+    bottom: 0;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;  /* 追加：フッター全体は100%幅 */
+}
 footer ul{
     display: block;
-    margin: 15px 75px 15px;
+    list-style-position: inside;  /* 追加：リストマーカーを内側に配置 */
 }
-
+footer li {
+    list-style-position: inside;  /* 追加：li要素でも明示的に指定 */
+}
 a {
     text-decoration: none;
     color: #ffffff;
 }
 
-header {
+.site-header {
+    color: #ffffff;
     background-color: #004D0D; 
     top: 0;
-    position: fixed;
+    /* position: fixed; */
     justify-content: center;
     align-items: flex-start;
     width: 100%;
     padding: 10px 0;
-
 }
 
 header nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
 }
 
 header ul{
@@ -81,8 +91,6 @@ header ul a{
 .header-logo{
     display: block;
     flex-direction: column;
-    
-
 }
 
 .TEL{
@@ -91,6 +99,6 @@ header ul a{
 }
 
 header h1{
-    margin-left: 40px;
+    /* margin-left: 40px; */
     font-size: 40px;
 }

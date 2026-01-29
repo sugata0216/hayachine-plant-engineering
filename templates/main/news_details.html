@@ -1,14 +1,13 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ニュース詳細</title>
-    <link rel="stylesheet" href="{% static "css/news_details.css" %}">
-    <link rel="stylesheet" href="{% static "css/contact_recruit_cta.css" %}">
-</head>
-<body>
+{% block title %}
+ニュース詳細
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static "css/news_details.css" %}">
+<link rel="stylesheet" href="{% static 'css/contact_recruit_cta.css' %}">
+{% endblock css %}
+{% block body %}
     <main class="news-detail-main">
         <article class="news-detail-container">
             <header class="news-detail-header">
@@ -36,5 +35,4 @@
         </article>
     </main>
     {% include "components/contact_recruit_cta.html" %}
-</body>
-</html>
+{% endblock body %}
