@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -36,7 +38,21 @@ def company_information(request):
     return render(request, "main/company_information.html")
  
 def inquiry_view(request):
-    return render(request, "main/inquiry.html")
+    if request.method == 'POST':
+        genre = request.POST.get('genre')
+        last_name = request.POST.get('last_name')
+        first_name = request.POST.get('first_name')
+        postal_code = request.POST.get('postal_code')
+        image = request.FILES.get('image')
+        address = request.POST.get('address')
+        phone_number = request.POST.get('phone_number')
+        mail = request.POST.get('mail')
+        content = request.POST.get('content')
+            
+        Contact.objects.create(genre_id = int(genre), last_name = last_name, first_name = first_name, postal_code = postal_code, image = image, phone_number = phone_number, mail = mail, content = content, address = address)
+        return redirect('main:index')
+    genres = Genre.objects.all()
+    return render(request, "main/inquiry.html", {'genres' : genres})
 
 def news_post_view(request):
     return render(request, "root/news_post.html")
