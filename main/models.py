@@ -25,7 +25,7 @@ class Contact(models.Model):
     postal_code = models.CharField(verbose_name='郵便番号')
     address = models.CharField(verbose_name='住所')
     phone_number = models.CharField(verbose_name='電話番号')
-    image = models.ImageField(null=True, default=None, upload_to='contact_images/', verbose_name='画像')
+    image = models.ImageField(null=True, blank=True, default=None, upload_to='contact_images/', verbose_name='画像')
     mail = models.EmailField(verbose_name='メールアドレス')
     content = models.TextField(verbose_name='お問い合わせ内容')
     created_at = models.DateField(auto_now_add=True, verbose_name='作成日時')
