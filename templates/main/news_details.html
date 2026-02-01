@@ -11,19 +11,21 @@
     <main class="news-detail-main">
         <article class="news-detail-container">
             <header class="news-detail-header">
-                <h1 class="news-detail-title">お仕事体験の様子のご紹介</h1>
-                <time class="news-detail-date">2025.10.22</time>
+                <h1 class="news-detail-title">{{news.title}}</h1>
+                <time class="news-detail-date">{{news.created_at}}</time>
             </header>
             
             <div class="news-detail-divider"></div>
             
             <div class="news-detail-content">
                 <div class="news-detail-image">
-                    <img src="{% static 'images/news-detail-1.jpg' %}" alt="お仕事体験の様子">
+                    {% if news.image %}
+                        <img src="{{ news.image.url }}" alt="{{news.title}}の画像">
+                    {% endif %}
                 </div>
                 
                 <div class="news-detail-text">
-                    <p>お仕事体験にご参加いただきありがとうございました。</p>
+                    <p>{{news.content}}</p>
                 </div>
             </div>
             

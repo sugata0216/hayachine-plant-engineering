@@ -1,44 +1,45 @@
+{% extends "base.html" %}
 {% load static %}
-<!doctype html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>管理者ログインページ</title>
+    {% block title %}管理者ログインページ{% endblock title %}
+    {% block css %}
     <link rel="stylesheet" href="{% static 'css/admin_login.css' %}" />
-  </head>
-  <body>
+    {% endblock css %}
+    {% block body %}
     <div class="main">
       <div class="title_h1">
         <h1>管理者ログインページ</h1>
       </div>
+      <p class="error">{{error}}</p>
+      <form method="POST">
+        {% csrf_token %}
         <div class="component">
           <div class="label-area">
             <p class="label-text">ID</p>
           </div>
           <div class="input-area">
             <input
-              type="text"
-              required
+            type="text"
+            name="username"
+            required
             />
           </div>
         </div>
         <hr />
-
+        
         <div class="component">
           <div class="label-area">
             <p class="label-text">パスワード</p>
           </div>
           <div class="input-area">
-            <input type="password" required>
+            <input type="password" name="pw" required>
           </div>
         </div>
-        <hr />
-      </div>
-
-      <div class="submit-area">
-        <input type="submit" value="送信" class="submit-button" />
-      </div>
+        <div class="submit-area">
+          <input type="submit" value="送信" class="submit-button" />
+        </div>
+      </form>
+      <hr />
     </div>
-  </body>
-</html>
+    
+  </div>
+  {% endblock body %}

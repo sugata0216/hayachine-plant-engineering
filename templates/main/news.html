@@ -9,25 +9,48 @@
 {% endblock css %}
 {% block body %}
     <div class="news-section">
-    <h2 class="section-title">過去のニュース</h2>
-    
-    <div class="news-scroll-container">
-        <div class="news-list">
+        <div class="flex">
+            <h2 class="section-title">過去のニュース</h2>
+            {% if user.is_authenticated %}
+            <a href="{% url "main:news_post_create" %}" class="contact-cta-btn">新規ニュース追加</a>
+            {% endif %}
+        </div>
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="message {{message.tags}}">
+                {{message}}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="news-scroll-container">
+            <div class="news-list">
             {% for item in news_list %}
-        <div class="news-row">
-            <span class="category-label {{ item.category }}">
-                {{ item.category_name }}
-            </span>
-            <span class="news-date">{{ item.date }}</span>
-            <span class="news-title">{{ item.title }}</span>
+            <div class="news-row">
+                <span class="category-label
+                {% if item.genre.genre == '重要' %} category-important
+                {% elif item.genre.genre == 'イベント' %} category-event
+                {% elif item.genre.genre == 'お知らせ' %} category-news
+                {% endif %}">
+                {{ item.genre.genre }}
+                </span>
+                <span class="news-date">{{ item.created_at }}</span>
+                {% if user.is_authenticated %}
+                <a href="{% url "main:news_post_edit" item.id %}" class="news-title">{{ item.title }}</a>
+                {% else %}
+                <a href="{% url "main:news_detail" item.id %}" class="news-title">{{ item.title }}</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+            </div>
         </div>
-        {% endfor %}
-        </div>
-    </div>
     {% include "components/contact_cta.html" %}
     </div>
 {% endblock body %}
 {% block footer_extra %}
-<li><a href="#">管理者ログイン</a></li>
+{% if not user.is_authenticated %}
+<li><a href="{% url "accounts:login" %}">管理者ログイン</a></li>
+{% endif %}
 {% endblock footer_extra %}
 
