@@ -4,7 +4,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* ヘッダー・フッター分の余白を確保 */
+  padding-top: 80px;
+  padding-bottom: 80px;
+  box-sizing: border-box;
 }
+
 .back-button {
   display: inline-block;
   padding: 10px 50px;
@@ -48,16 +53,4 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-}
-
-.forbidden-container {
-  /* min-height: 100vh; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* ヘッダー・フッター分の余白を確保 */
-  padding-top: 80px;
-  padding-bottom: 80px;
-  box-sizing: border-box;
 }

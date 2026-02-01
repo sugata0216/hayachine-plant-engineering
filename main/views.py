@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseForbidden
+import functools
 
 from .models import *
 from .forms import *
 
 # Create your views here.
 
+
 def my_login_required(view_func):
+    @functools.wraps(view_func)
     def _wrapped_view(request, *args, **kwargs):
         if not request.user.is_authenticated:
             return render(request, '403.html', status=403)
@@ -22,8 +23,12 @@ def news_list_view(request):
     news_list = News.objects.order_by('id').reverse()
     return render(request, 'main/news.html', {'news_list': news_list})
 def news_detail(request, pk):
-    context = News.objects.filter(id = pk)
-    return render(request, 'main/news_details.html', {'context' : context})
+    try:
+        news = News.objects.get(id=pk)
+        return render(request, 'main/news_details.html', {'news' : news})
+    except News.DoesNotExist:
+        messages.error(request, '指定されたニュースは存在しません。')
+        return redirect('main:news')
 
 def recruitment(request):
     return render(request, "main/recruit_ment.html")

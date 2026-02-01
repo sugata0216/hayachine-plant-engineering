@@ -10,23 +10,22 @@
 {% block body %}
     <main class="news-detail-main">
         <article class="news-detail-container">
-            {% for item in context %}
             <header class="news-detail-header">
-                <h1 class="news-detail-title">{{item.title}}</h1>
-                <time class="news-detail-date">{{item.created_at}}</time>
+                <h1 class="news-detail-title">{{news.title}}</h1>
+                <time class="news-detail-date">{{news.created_at}}</time>
             </header>
             
             <div class="news-detail-divider"></div>
             
             <div class="news-detail-content">
                 <div class="news-detail-image">
-                    {% if item.image %}
-                        <img src="{{ item.image.url }}">
+                    {% if news.image %}
+                        <img src="{{ news.image.url }}" alt="{{news.title}}の画像">
                     {% endif %}
                 </div>
                 
                 <div class="news-detail-text">
-                    <p>{{item.content}}</p>
+                    <p>{{news.content}}</p>
                 </div>
             </div>
             
@@ -35,7 +34,6 @@
             </div>
             
             <div class="news-detail-divider-end"></div>
-            {% endfor %}
         </article>
     </main>
     {% include "components/contact_recruit_cta.html" %}

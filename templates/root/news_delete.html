@@ -17,7 +17,7 @@
         <div class="news-detail-content">
             <div class="news-detail-image">
                 {% if news.image %}
-                    <img src="{{ news.image.url }}">
+                    <img src="{{ news.image.url }}" alt="{{news.title}}">
                 {% endif %}
             </div>
             <div class="news-detail-text">
