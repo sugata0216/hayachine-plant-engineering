@@ -103,7 +103,18 @@
         </div>
         
         <div class="news-list">
+            {% for news in news_list %}
             <div class="news-item">
+                <span class="news-category 
+                {% if news.genre.genre == '重要' %} category-important
+                {% elif news.genre.genre == 'イベント' %} category-event
+                {% elif news.genre.genre == 'お知らせ' %} category-news
+                {% endif %}">{{news.genre.genre}}</span>
+                <span class="news-date">{{news.created_at}}</span>
+                <span class="news-content">{{news.title}}</span>
+            </div>
+            {% endfor %}
+            {% comment %} <div class="news-item">
                 <span class="news-category">お知らせ</span>
                 <span class="news-date">2025年10月24日</span>
                 <span class="news-content">工事の範囲拡大について</span>
@@ -112,7 +123,7 @@
                 <span class="news-category">お知らせ</span>
                 <span class="news-date">2025年10月22日</span>
                 <span class="news-content">ホームページ開設</span>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 </section>

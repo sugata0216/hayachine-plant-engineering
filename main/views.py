@@ -1,32 +1,29 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseForbidden
 
 from .models import *
 from .forms import *
 
 # Create your views here.
 
+def my_login_required(view_func):
+    def _wrapped_view(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return render(request, '403.html', status=403)
+        return view_func(request, *args, **kwargs)
+    return _wrapped_view
+
 def index(request):
-    return render(request, "main/top.html")
+    news_list = News.objects.order_by('id').reverse()[:2]
+    return render(request, "main/top.html", {'news_list' : news_list})
 def news_list_view(request):
-    # ダミーデータ
-    dummy_news = [
-        {'category': 'event', 'category_name': 'イベント', 'date': '2025年10月26日', 'title': 'お仕事体験の様子のご紹介'},
-        {'category': 'info', 'category_name': 'お知らせ', 'date': '2025年10月25日', 'title': '新しいパンフレットの発刊'},
-        {'category': 'urgent', 'category_name': '重要', 'date': '2025年10月22日', 'title': '工事の範囲拡大について'},
-        {'category': 'info', 'category_name': 'お知らせ', 'date': '2025年10月22日', 'title': '職業体験開始について'},
-        {'category': 'info', 'category_name': 'お知らせ', 'date': '2025年10月22日', 'title': 'ホームページ開設'},
-    ]
-    
-    return render(request, 'main/news.html', {'news_list': dummy_news})
-def news_detail(request):
-    # 実際にはデータベースから取得
-    context = {
-        'title': 'お仕事体験の様子のご紹介',
-        'date': '2025.10.22',
-        'content': 'お仕事体験にご参加いただきありがとうございました。',
-        'image': 'news-detail-1.jpg'
-    }
-    return render(request, 'main/news_details.html', context)
+    news_list = News.objects.order_by('id').reverse()
+    return render(request, 'main/news.html', {'news_list': news_list})
+def news_detail(request, pk):
+    context = News.objects.filter(id = pk)
+    return render(request, 'main/news_details.html', {'context' : context})
 
 def recruitment(request):
     return render(request, "main/recruit_ment.html")
@@ -39,23 +36,38 @@ def company_information(request):
  
 def inquiry_view(request):
     if request.method == 'POST':
-        genre = request.POST.get('genre')
-        last_name = request.POST.get('last_name')
-        first_name = request.POST.get('first_name')
-        postal_code = request.POST.get('postal_code')
-        image = request.FILES.get('image')
-        address = request.POST.get('address')
-        phone_number = request.POST.get('phone_number')
-        mail = request.POST.get('mail')
-        content = request.POST.get('content')
-            
-        Contact.objects.create(genre_id = int(genre), last_name = last_name, first_name = first_name, postal_code = postal_code, image = image, phone_number = phone_number, mail = mail, content = content, address = address)
-        return redirect('main:index')
-    genres = Genre.objects.all()
-    return render(request, "main/inquiry.html", {'genres' : genres})
+        form = InquiryForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('main:index')
+        else:
+            return render(request, 'main/inquiry.html', {'form' : form})
+    form = InquiryForm(initial={'genre': 4})
+    return render(request, "main/inquiry.html", {'form' : form})
 
-def news_post_view(request):
-    return render(request, "root/news_post.html")
+@my_login_required
+def news_post_view(request, pk=None):
+    if pk:
+        instance = get_object_or_404(News, pk=pk)
+    else:
+        instance = None
+    if request.method == 'POST':
+        form = NewsForm(request.POST, request.FILES, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('main:news')
+    else:
+        if instance is None:
+            form = NewsForm(initial={'genre': 1})
+        else:
+            form = NewsForm(instance=instance)
+    return render(request, "root/news_post.html", {'form': form})
 
-def admin_login_view(request):
-    return render(request, 'root/admin_login.html')
+@my_login_required
+def news_delete_view(request, pk):
+    news = get_object_or_404(News, pk=pk)
+    if request.method == 'POST':
+        news.delete()
+        messages.success(request, 'ニュースを削除しました')
+        return redirect('main:news')
+    return render(request, 'root/news_delete.html', {'news' : news})

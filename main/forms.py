@@ -17,3 +17,17 @@ class InquiryForm(forms.ModelForm):
             'mail',
             'content',
         )
+
+class NewsForm(forms.ModelForm):
+    class Meta:
+        model = News
+        fields = (
+            'genre',
+            'title',
+            'image',
+            'content',
+        )
+        widgets = {
+            'genre': forms.RadioSelect,
+            'image' : forms.FileInput,
+        }

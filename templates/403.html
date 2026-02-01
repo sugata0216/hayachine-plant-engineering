@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}権限エラー{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/403.css' %}">{% endblock css %}
+
+{% block body %}
+<div class="forbidden-container">
+  <h1>権限がありません。</h1>
+  <a href="{% url 'main:index' %}" class="back-button">トップへ戻る</a>
+</div>
+{% endblock body %}

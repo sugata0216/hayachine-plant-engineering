@@ -10,7 +10,7 @@ class Genre(models.Model):
 class News(models.Model):
     genre = models.ForeignKey(Genre, on_delete=models.PROTECT, verbose_name="ジャンル")
     title = models.CharField(verbose_name="ニュースタイトル")
-    image = models.ImageField(null=True, default=None, upload_to='news_images/', verbose_name='画像')
+    image = models.ImageField(null=True, blank=True, default=None, upload_to='news_images/', verbose_name='画像')
     content = models.TextField(verbose_name='ニュース本文')
     created_at = models.DateField(auto_now_add=True, verbose_name='作成日時')
     delete_flag = models.BooleanField(default=False, verbose_name='削除フラグ')

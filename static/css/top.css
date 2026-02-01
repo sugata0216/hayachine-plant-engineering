@@ -687,3 +687,15 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
+.news-category.category-important {
+  background-color: #FF4400; /* 重要の背景色 */
+}
+
+.news-category.category-event {
+  background-color: #0060D5; /* イベントの背景色 */
+}
+
+.news-category.category-news {
+  background-color: #004D0D; /* お知らせの背景色 */
+}
