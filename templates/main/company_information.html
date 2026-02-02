@@ -2,7 +2,7 @@
     {% load static %}
     {% block title %}Company Information{% endblock %}
     {% block css %}<link rel="stylesheet" href="{% static 'css/company_information.css' %}">
-    <link rel="stylesheet" href="{% static 'css/contact_cta.css' %}">{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/contact_recruit_cta.css' %}">{% endblock %}
     
 
     {% block body %}
@@ -12,7 +12,6 @@
                 <h2>会社情報</h2>
                 <p>-Company Information-</p>
             </div>  
-            {% comment %} <img src="{% static 'images/recruitment.jpg' %}" alt="採用情報メイン画像" class="recruit-main-image"> {% endcomment %}
         </div> 
         <div class="Requirements">
             <h1 class="line-title">募集要項</h1>
@@ -94,8 +93,8 @@
         </div>   
 
         <div class="contact-cta-right">
-            <a href="#" class="contact-cta-btn">事業内容はこちら</a>
-            <a href="#" class="contact-cta-btn">採用情報はこちら</a>
+            <a href="{% url 'main:business_activities' %}" class="contact-cta-btn">事業内容はこちら</a>
+            <a href="{% url 'main:recruitment' %}" class="contact-cta-btn">採用情報はこちら</a>
         </div>
 
 
@@ -108,5 +107,5 @@
         <h1 class="line-titles"></h1>
 
     </body>
-{% include 'components/contact_cta.html' %}
+{% include 'components/contact_recruit_cta.html' %}
     {% endblock %}
