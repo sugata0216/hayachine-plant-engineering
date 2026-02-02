@@ -1,13 +1,111 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>採用情報</title>
-</head>
+{% load static %}
+{% block title %}Recruitment{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/recruit_ment.css' %}">{% endblock %}
+
+{% block body %}
 <body>
-    <h1>採用情報</h1>
-    
+    <div class="recruit-header">
+        <div class="title">
+            <h2>採用情報</h2>
+            <p>-Recruitment-</p>
+        </div>  
+        {% comment %} <img src="{% static 'images/recruitment.jpg' %}" alt="採用情報メイン画像" class="recruit-main-image"> {% endcomment %}
+    </div> 
+    <div class="Message">
+        <div class="Message-background">
+            <div class="MessageTopfont">
+                <h3>～採用メッセージ～</h3>
+                <p>-Message-</p>
+            </div>
+            <p>豊かな街を一緒に作りましょう!</p>
+            <p>私たちは「新鮮な水を届ける」ということを大事にしています!</p>
+            <p>ご興味のある方はぜひお問い合わせを! </p>
+            <p class="ceo-name">代表取締役社長　姫神太郎</p>
+        </div>
+        <img src="{% static 'images/TOP.webp' %}" alt="代表取締役社長" class="ceo-image">
+    </div>
+
+    <div class="voice">
+        <div class="voice-background">
+            <div class="VoiveTopfont">
+                <h3>～先輩社員の声～</h3>
+                <p>-Voice-</p>
+            </div>
+            <p>豊かな街を一緒に作りましょう!</p>
+            <p>私たちは「新鮮な水を届ける」ということを大事にしています!</p>
+            <p>ご興味のある方はぜひお問い合わせを! </p>
+        </div>
+
+
+        <div class="voice-item-set">
+            
+            <div class="voice-item1">
+            <div class="voice-item">    
+                <img src="{% static 'images/ogu-ra.webp' %}" alt="先輩A" class="voice-image">
+                <div class="voive-text">
+                <h3>小倉雄介<br>（採水設備部）</h3>
+                </div>
+                <p>管工事の仕事の中で、お客様からの感謝の言葉がうれしくてやりがいを感じます。</p>
+            </div>
+        
+            <div class="voice-item">
+                <img src="{% static 'images/nozaki (1).jpg' %}" alt="先輩B" class="voice-image">
+                <div class="voive-text">
+                <h3>野崎繁裕<br>（水道管設備部）</h3>
+                </div>
+                <p>まだ分からないことが多いですが、『失敗覚悟で挑戦してみろ』と先輩方が背中を押してくれるので、毎日少しずつ成長できています。</p>
+            </div>
+            </div>
+
+            <div class="voice-item2">
+            <div class="voice-item">
+                <img src="{% static 'images/ito.jpg' %}" alt="先輩C" class="voice-image">
+                <div class="voive-text">
+                <h3>伊藤佐紀<br>（図面作成部）</h3>
+                </div>
+                <p>若い社員が成長していく姿を見るのも楽しみで、技術を次の世代に伝えていくことが私の使命だと思っています。</p>
+            </div>
+
+            <div class="voice-item">
+                <img src="{% static 'images/sato.jpg' %}" alt="先輩D" class="voice-image">
+                <div class="voive-text">
+                <h3>佐藤勉<br>（水道管設備部）</h3>
+                </div>
+                <p>最初は工具の名前も分からず不安でしたが、先輩が丁寧に教えてくれたおかげで、今では現場を任されることも増えました。</p>
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="Requirements">
+        <h1>～募集要項～</h1>
+        <p>Requirements</p>
+
+        <table class="requirements-table">
+            <tr>
+            <th>勤務地</th>
+            <td>〒020-0021 岩手県盛岡市中央通3丁目12-2</td>
+            </tr>
+            <tr>
+            <th>業務内容</th>
+            <td>一般住宅・ビル等の採水設備工事 / 水道管設備工事 / 管工事</td>
+            </tr>
+            <tr>
+            <th>求める人材</th>
+            <td>図面が作成できる方・大卒の方</td>
+            </tr>
+            <tr>
+            <th>勤務時間</th>
+            <td>8:00～17:00</td>
+            </tr>
+            <tr>
+            <th>休日</th>
+            <td>日曜、第2・第4土曜、国民の祝日</td>
+            </tr>
+        </table>
+    </div>
 </body>
-</html>
+{% comment %} {% include 'components/contact_cta.html' %} {% endcomment %}
+{% endblock %}
