@@ -1,11 +1,112 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>会社情報</title>
-</head>
-<body>
+    {% extends "base.html" %}
+    {% load static %}
+    {% block title %}Company Information{% endblock %}
+    {% block css %}<link rel="stylesheet" href="{% static 'css/company_information.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact_cta.css' %}">{% endblock %}
     
-</body>
-</html>
+
+    {% block body %}
+    <body>
+        <div class="recruit-header">
+            <div class="title">
+                <h2>会社情報</h2>
+                <p>-Company Information-</p>
+            </div>  
+            {% comment %} <img src="{% static 'images/recruitment.jpg' %}" alt="採用情報メイン画像" class="recruit-main-image"> {% endcomment %}
+        </div> 
+        <div class="Requirements">
+            <h1 class="line-title">募集要項</h1>
+
+            <table class="requirements-table">
+                <tr>
+                <th>会社名</th>
+                <td>株式会社早池峰設備工業</td>
+                </tr>
+                <tr>
+                <th>所在地</th>
+                <td>〒020-0021 岩手県盛岡市中央通３丁目１２−２</td>
+                </tr>
+                <tr>
+                <th>創立年月日</th>
+                <td>昭和50年7月1日</td>
+                </tr>
+                <tr>
+                <th>代表者</th>
+                <td>姫神太郎</td>
+                </tr>
+                <tr>
+                <th>資本金</th>
+                <td>11,000千円</td>
+                </tr>
+                <tr>
+                <th>対象地域</th>
+                <td>矢巾町　紫波町　花巻市　北上市　遠野市　住田町　一関市　盛岡市　宮古市　二戸市　一戸町　滝沢市　大船渡市　八幡平市　陸前高田市　雫石町</td>
+                </tr>
+            </table>
+        </div>
+
+        <h1 class="line-title">企業理念</h1>
+        <div class="rinenn">
+            <p class="text-blue">安全な水を提供する</p>
+            <p class="border-blue">「水のありがたみ」を、すべての人へ。</p>
+            <p class="rinenn-text">水は生命維持に不可欠であり、人間の体内で酸素や栄養素を運び老廃物を排出する働きや、体温調節に役立っています。また、飲み水だけでなく、料理、洗濯、農業、工業など、私たちの生活や産業の基盤を支える貴重な資源です。安全な水を提供できるようにお客様一人一人に寄り添います。
+                水のありがたさを知ってもらうために、早池峰設備工業は走り続けます。
+            </p>
+        </div>
+
+
+        <h1 class="line-title">他社との強み・違い</h1>
+        <div class="service-box">
+        <div class="service-image">
+            <img src="{% static 'images/technical_ability.jpg' %}" alt="作業中の様子">
+        </div>
+
+        
+        <div class="service-text">
+            <h2>長年培った技術力</h2>
+            <p class="service-text-p">質の高い技術力と安心をご提供します。</p>
+            <p>私たちは、水回りの専門家として、信用と信頼を大切に、責任感を持って施工しています。プロの目線で排水管の設備やその周辺をしっかりとチェックし、対応いたします。</p>
+        </div>
+        </div>  
+
+        <div class="service-box">
+        <div class="service-image">
+            <img src="{% static 'images/suggestion.png' %}" alt="作業中の様子">
+        </div>
+
+        <div class="service-text">
+            <h2>最適なご提案</h2>
+            <p class="service-text-p">お客様の立場に立ったご提案ができます。</p>
+            <p>お客様のご要望と住まいの機能性が両立した工事をご提案します。「いつもとは違う変化」が見られたら、お気軽にご相談ください。お客様の立場に立ち、プロの目で的確かつ最適なプランをご提案します。</p>
+        </div>
+        </div>   
+
+        <div class="service-box">
+        <div class="service-image">
+            <img src="{% static 'images/service.jpg' %}" alt="作業中の様子">
+        </div>
+
+        <div class="service-text">
+            <h2>豊富なサービス</h2>
+            <p class="service-text-p">多くのサービスをご提供します。</p>
+            <p>私たちは、水回りの専門家として、信用と信頼を大切に、責任感を持って施工しています。プロの目線で排水管の設備やその周辺をしっかりとチェックし、対応いたします。</p>
+        </div>
+        </div>   
+
+        <div class="contact-cta-right">
+            <a href="#" class="contact-cta-btn">事業内容はこちら</a>
+            <a href="#" class="contact-cta-btn">採用情報はこちら</a>
+        </div>
+
+
+        <h1 class="line-title">営業時間</h1>
+        <div class="times">
+            <p>営業時間 8:00～17:00</p>
+            <p>定休日　 第2・第4土曜日・日曜日、その他各祝日</p>
+        </div>
+
+        <h1 class="line-titles"></h1>
+
+    </body>
+{% include 'components/contact_cta.html' %}
+    {% endblock %}
