@@ -1,11 +1,107 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ニュース投稿/編集</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}ニュース投稿/編集{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/news_post.css' %}" />{% endblock css %}
+{% block body %}
+<div class="main">
+      <div class="title_h1">
+        <h1>投稿/編集/削除ページ</h1>
+      </div>
+      
+      {% if form.errors %}
+      <div style="color: red;">
+        <p>入力エラーがあります。</p>
+        {{form.errors}}
+      </div>
+      {% endif %}
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="genre">
+          <p>ニュースジャンル</p>
+        </div>
+        <div class="radio">
+          <label for="genre_event">
+            <input
+              type="radio"
+              name="genre"
+              id="genre_event"
+              value="1"
+              {% if form.genre.value|stringformat:"s" == "1" %}checked{% endif %}
+            />
+            イベント
+          </label>
+          <label for="genre_news">
+            <input
+              type="radio"
+              name="genre"
+              id="genre_news"
+              value="2"
+              {% if form.genre.value|stringformat:"s" == "2" %}checked{% endif %}
+            />
+            お知らせ
+          </label>
+          <label for="genre_important">
+            <input
+              type="radio"
+              name="genre"
+              id="genre_important"
+              value="3"
+              {% if form.genre.value|stringformat:"s" == "3" %}checked{% endif %}
+            />
+            重要
+          </label>
+        </div>
+        
+        <div class="genre">
+        <p>入力フォーム</p>
+      </div>
+      <div class="component">
+        <div class="label-area">
+          <p class="label-text">題名</p>
+          <span class="required">必須</span>
+        </div>
+          <div class="input-area">
+            {{form.title}}
+          </div>
+        </div>
+        <hr />
+        
+        <div class="component" style="align-items: flex-start;">
+        
+        <div class="label-area">
+          <p class="label-text">写真</p>
+        </div>
+        
+        <div class="input-area">
+          
+          {% if form.instance.image %}
+            <div class="image-div">
+              <img src="{{ form.instance.image.url }}" alt="現在の画像" class="image">
+            </div>
+          {% endif %}
+          {{ form.image }}
+        </div>
+      </div>
+      <hr />
+        
+        <div class="component">
+          <div class="label-area">
+            <p class="label-text">内容</p>
+            <span class="required">必須</span>
+          </div>
+          <div class="input-area">
+            {{form.content}}
+          </div>
+        </div>
+        <hr />
+      </div>
+      
+      <div class="submit-area">
+        <input type="submit" value="送信" class="submit-button" />
+        {% if form.instance.pk %}
+          <a href="{% url 'main:news_delete' form.instance.pk %}" class="delete-button">削除</a>
+        {% endif %}
+      </div>
+    </form>
+    </div>
+{% endblock body %}

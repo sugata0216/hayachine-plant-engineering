@@ -1,11 +1,195 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html" %} {% load static %} 
+{% block title %}お問い合わせフォーム{% endblock title %} 
+{% block css %}<link rel="stylesheet" href="{% static 'css/inquiry.css' %}"/>{% endblock css %} 
+{% block body %}
+<div class="main">
+  <div class="title_h1">
+    <h1>お問い合わせフォーム</h1>
+  </div>
+
+  {% if form.errors %}
+  <div style="border: 2px solid red; padding: 10px; margin-bottom: 20px; color: red;">
+    <p>入力内容にエラーがあります。</p>
+    <ul>
+      {% for field in form %}
+        {% for error in field.errors %}
+          <li>{{ field.label }}: {{ error }}</li>
+        {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <form method="POST" enctype="multipart/form-data">
+    <div class="genre">
+      <p>顧客ジャンル</p>
+    </div>
+    <div class="radio">
+      <label for="genre_repair">
+        <input
+          type="radio"
+          name="genre"
+          id="genre_repair"
+          value="4"
+          {% if form.genre.value|stringformat:"s" == "4" %}checked{% endif %}
+        />
+        修理・故障
+      </label>
+      <label for="genre_company">
+        <input
+          type="radio"
+          name="genre"
+          id="genre_company"
+          value="5"
+          {% if form.genre.value|stringformat:"s" == "5" %}checked{% endif %}
+        />
+        企業
+      </label>
+      <label for="genre_recruit">
+        <input
+          type="radio"
+          name="genre"
+          id="genre_recruit"
+          value="6"
+          {% if form.genre.value|stringformat:"s" == "6" %}checked{% endif %}
+        />
+        採用に関するお問い合わせ
+      </label>
+    </div>
+
+    <div class="genre">
+      <p>個人情報入力フォーム</p>
+    </div>
+    {% csrf_token %}
+
+    <div class="form">
+      <div class="component">
+        <div class="label-area">
+          <p class="label-text">名前</p>
+          <span class="required">必須</span>
+        </div>
+        <div class="input-area name-row">
+          <span>姓</span>
+          <input 
+            type="text" 
+            placeholder="例:氷山" 
+            name="last_name" 
+            value="{{ form.last_name.value|default_if_none:'' }}"
+            required 
+          />
+          <span>名</span>
+          <input
+            type="text"
+            placeholder="例:玉龍"
+            name="first_name"
+            value="{{ form.first_name.value|default_if_none:'' }}"
+            required
+          />
+        </div>
+      </div>
+      <hr />
+
+      <div class="component">
+        <div class="label-area">
+          <p class="label-text">郵便番号<br />(ハイフンなし)</p>
+          <span class="required">必須</span>
+        </div>
+        <div class="input-area">
+          <input
+            type="text"
+            placeholder="例) 0200021"
+            pattern="\d{3}-?\d{4}"
+            name="postal_code"
+            value="{{ form.postal_code.value|default_if_none:'' }}"
+            required
+          />
+        </div>
+      </div>
+      <hr />
+
+      <div class="component">
+        <div class="label-area">
+          <p class="label-text">住所</p>
+          <span class="required">必須</span>
+        </div>
+        <div class="input-area">
+          <input
+            type="text"
+            placeholder="例) 岩手県盛岡市中央通3-2-17"
+            name="address"
+            value="{{ form.address.value|default_if_none:'' }}"
+            required
+          />
+        </div>
+      </div>
+      <hr />
+
+      <div class="component">
+        <div class="label-area">
+          <p class="label-text">写真</p>
+        </div>
+        <div class="input-area">
+          <input type="file" name="image" />
+        </div>
+      </div>
+      <hr />
+
+      <div class="component">
+        <div class="label-area">
+          <p class="label-text">電話番号<br />(ハイフンなし)</p>
+          <span class="required">必須</span>
+        </div>
+        <div class="input-area">
+          <input
+            type="tel"
+            placeholder="例) 0196221500"
+            name="phone_number"
+            value="{{ form.phone_number.value|default_if_none:'' }}"
+            required
+          />
+        </div>
+      </div>
+      <hr />
+
+      <div class="component">
+        <div class="label-area">
+          <p class="label-text">メールアドレス</p>
+          <span class="required">必須</span>
+        </div>
+        <div class="input-area">
+          <input
+            type="email"
+            placeholder="例) h.tamayama.sys24@morijyobi.ac.jp"
+            name="mail"
+            value="{{ form.mail.value|default_if_none:'' }}"
+            required
+          />
+        </div>
+      </div>
+      <hr />
+
+      <div class="component">
+        <div class="label-area">
+          <p class="label-text">内容</p>
+          <span class="required">必須</span>
+        </div>
+        <div class="input-area">
+          <textarea
+            placeholder="水道管が破裂しました..."
+            name="content"
+            required
+          >{{ form.content.value|default_if_none:'' }}</textarea>
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <div class="submit-area">
+      <input type="submit" value="送信" class="submit-button" />
+    </div>
+  </form>
+</div>
+{% endblock body %}

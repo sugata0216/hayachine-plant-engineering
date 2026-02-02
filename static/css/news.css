@@ -1,0 +1,105 @@
+.section-title {
+    text-align: center;
+    font-size: 36px;
+}
+/* 外枠：グレーの背景と高さ指定 */
+.news-scroll-container {
+    background-color: #dcdcdc; /* 薄いグレー */
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: scroll; /* はみ出したらスクロール */
+    width: 80%;
+    margin: 0 auto;
+}
+.news-list {
+    width: 90%;
+    margin: 0 auto;
+}
+/* 1行ごとの設定 */
+.news-row {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+}
+
+/* ラベル共通 */
+.category-label {
+    color: white;
+    padding: 5px 20px;
+    border-radius: 50px; /* 丸くする */
+    min-width: 100px;
+    text-align: center;
+    margin-right: 30px;
+}
+
+/* カテゴリー別の色 */
+.event { background-color: #0062d1; }  /* 青 */
+.info { background-color: #007c70; }   /* 緑 */
+.urgent { background-color: #ff4500; } /* 赤 */
+
+.news-date {
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+.flex {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+}
+
+.flex .contact-cta-btn {
+    position: absolute;
+    right: 5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.flex .contact-cta-btn:hover {
+    transform: translateY(-50%) translateY(-2px);
+}
+
+.flex .contact-cta-btn:active {
+    transform: translateY(-50%) translateY(4px);
+}
+
+.news-title {
+    color: black;
+    font-weight: bold;
+    padding: 1%;
+}
+
+.news-row:hover {
+    background-color: darkgray;
+}
+
+.category-label.category-important {
+  background-color: #FF4400; /* 重要の背景色 */
+}
+
+.category-label.category-event {
+  background-color: #0060D5; /* イベントの背景色 */
+}
+
+.category-label.category-news {
+  background-color: #004D0D; /* お知らせの背景色 */
+}
+
+.messages {
+    text-align: center;
+    margin: 32px 0;
+}
+.message {
+    display: inline-block;
+    background: #ffeaea;
+    color: #c00;
+    padding: 12px 24px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 18px;
+    font-weight: bold;
+}

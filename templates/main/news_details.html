@@ -1,11 +1,40 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ニュース詳細</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+ニュース詳細
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static "css/news_details.css" %}">
+<link rel="stylesheet" href="{% static 'css/contact_recruit_cta.css' %}">
+{% endblock css %}
+{% block body %}
+    <main class="news-detail-main">
+        <article class="news-detail-container">
+            <header class="news-detail-header">
+                <h1 class="news-detail-title">{{news.title}}</h1>
+                <time class="news-detail-date">{{news.created_at}}</time>
+            </header>
+            
+            <div class="news-detail-divider"></div>
+            
+            <div class="news-detail-content">
+                <div class="news-detail-image">
+                    {% if news.image %}
+                        <img src="{{ news.image.url }}" alt="{{news.title}}の画像">
+                    {% endif %}
+                </div>
+                
+                <div class="news-detail-text">
+                    <p>{{news.content}}</p>
+                </div>
+            </div>
+            
+            <div class="news-detail-back">
+                <a href="{% url 'main:news' %}" class="back-button">戻る</a>
+            </div>
+            
+            <div class="news-detail-divider-end"></div>
+        </article>
+    </main>
+    {% include "components/contact_recruit_cta.html" %}
+{% endblock body %}

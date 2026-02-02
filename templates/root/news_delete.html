@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+ニュース削除確認
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static "css/news_details.css" %}">
+<link rel="stylesheet" href="{% static 'css/news_delete.css' %}">
+{% endblock css %}
+{% block body %}
+<main class="news-detail-main">
+    <article class="news-detail-container">
+        <header class="news-detail-header">
+            <h1 class="news-detail-title">ニュース削除確認</h1>
+        </header>
+        <div class="news-detail-divider"></div>
+        <div class="news-detail-content">
+            <div class="news-detail-image">
+                {% if news.image %}
+                    <img src="{{ news.image.url }}" alt="{{news.title}}">
+                {% endif %}
+            </div>
+            <div class="news-detail-text">
+                <p><strong>タイトル：</strong>{{ news.title }}</p>
+                <p><strong>作成日：</strong>{{ news.created_at }}</p>
+                <p><strong>内容：</strong>{{news.content}}</p>
+            </div>
+            <div class="news-delete-message">
+                このニュースを本当に削除しますか？
+            </div>
+            <form method="post" class="delete-form">
+                {% csrf_token %}
+                <a href="{% url 'main:news_post_edit' news.id %}" class="cancel-button">キャンセル</a>
+                <button type="submit" class="delete-button">削除する</button>
+            </form>
+        </div>
+        <div class="news-detail-divider-end"></div>
+    </article>
+</main>
+{% endblock body %}
