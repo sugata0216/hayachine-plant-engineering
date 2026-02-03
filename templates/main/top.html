@@ -71,11 +71,11 @@
             <div class="consultation-buttons">
                 <div class="button-group">
                     <p class="button-description">お気軽にお問い合わせください！</p>
-                    <a href="#" class="consultation-btn btn-green">事業情報はこちら</a>
+                    <a href="{% url 'main:company_information' %}" class="consultation-btn btn-green">会社情報はこちら</a>
                 </div>
                 <div class="button-group">
                     <p class="button-description">まずは相談して現状確認！</p>
-                    <a href="#" class="consultation-btn btn-green">お問い合わせはこちら</a>
+                    <a href="{% url 'main:inquiry' %}" class="consultation-btn btn-green">お問い合わせはこちら</a>
                 </div>
             </div>
         </div>
@@ -99,7 +99,7 @@
                 ニュース
                 <span class="news-icon">📢</span>
             </h2>
-            <a href="#" class="news-link">ニュース一覧 ></a>
+            <a href="{% url 'main:news' %}" class="news-link">ニュース一覧 ></a>
         </div>
         
         <div class="news-list">
@@ -179,7 +179,7 @@
         </div>
 
         <div class="services-button-container">
-            <a href="#" class="services-btn">事業内容はこちら</a>
+            <a href="{% url 'main:business_activities' %}" class="services-btn">事業内容はこちら</a>
         </div>
     </div>
 </section>
@@ -199,7 +199,7 @@
                     私たちとやりませんか？
                 </p>
             </div>
-            <a href="#" class="recruitment-btn">採用情報はこちら</a>
+            <a href="{% url 'main:recruitment' %}" class="recruitment-btn">採用情報はこちら</a>
         </div>
         
         <div class="recruitment-right">
