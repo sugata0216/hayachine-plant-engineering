@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+body{
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-family: "Helvetica Neue", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 16px;
+}
+
+.recruit-header{
+    height: 400px;
+    background-image: url("../images/recruitment.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.title h2{
+    font-size: 56px;
+    margin: 0;
+    color: #004D0D;
+    text-align: center;
+}
+
+.title p{
+    text-align: center;
+    color: #004D0D;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.Message{
+    width: 80%;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    border: 2px solid #000;
+}
+
+.Message-background{
+    width: 60%;
+    padding: 20px;  
+    font-size: 20px;
+}
+
+.MessageTopfont{
+    text-align: center;
+}
+
+.MessageTopfont h3{
+    font-size: 24px;
+}
+
+.MessageTopfont p{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.ceo-name{
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.ceo-image{
+    width: 40%;
+    max-width: 450px;
+    height: auto;
+}
+
+.voice{
+    background-color: #004D0D;
+    color: #fff;
+    padding: 60px 0;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.voice-background{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.VoiveTopfont h3{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.voice-item-set{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.voice-item1,
+.voice-item2{
+    display: contents;
+}
+
+.voice-item{
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.voive-text h3{
+    text-align: center;
+}
+
+.voice-image{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.voice-item h3{
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+
+.Requirements{
+    text-align: center;
+    margin: 60px 0;
+}
+
+.requirements-title span {
+  font-size: 14px;
+}
+
+.requirements-table {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 1.25rem;
+  border-collapse: collapse;
+}
+
+.requirements-table th,
+.requirements-table td {
+  border: 2px solid #333;
+  padding: 20px 10px;
+  font-size: 24px;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.requirements-table th {
+  width: 30%;
+  background-color: #d3d3d3;
+  text-align: left;
+  font-weight: normal;
+}
+

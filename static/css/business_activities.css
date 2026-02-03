@@ -1,0 +1,223 @@
+.service-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.point-box {
+  border: 2px solid #1e90ff;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background: #f8fbff;
+}
+
+.point-number {
+  font-size: 2.4rem;
+  font-weight: bold;
+  height: 60px;
+  width: 60px;
+  color: #ffffff;
+  background-color: #ff1e1e;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.point-title {
+  font-size: 2rem;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.point-lead {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #004ED5;
+  margin-bottom: 20px;
+}
+
+.tel {
+  font-weight: bold;
+  text-align: center;   
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #1e90ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.image-list {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.img-item {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.service-list {
+  margin: 20px 20px 20px 20px;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+
+.recruit-header{
+    height: 400px;
+    background-image: url("../images/suisyou49.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.title h2{
+    font-size: 56px;
+    margin: 0;
+    color: #004D0D;
+    text-align: center;
+}
+
+.title p{
+    text-align: center;
+    color: #004D0D;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+body{
+    background-color: #96E8FF;
+}
+
+.green{
+    color: #00C327;
+}
+.blue{
+    color: #004ED5;
+}
+.red{
+    color: #FF0000;
+}
+
+.point-number-background{
+    background-color: #FFFFFF;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+img{
+    height: 200px;
+    width: 300px;
+    margin-left: 30px;
+}
+
+.point1{
+    margin-right: 25px;
+    margin-top: 25px;
+}
+
+.tel-number{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.point-lead-box{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.point1-description h2{
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+    color: #004ED5;
+}
+
+.point1-description p{
+    font-size: 18px;
+    line-height: 1.6;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contact-cta-right{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.point-lead2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.allserves{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alllist{
+    display: flex;
+    justify-content: center;
+}
+
+.onpu{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.alltown{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: -20px;
+}
+
+.area_img{
+    width: 300px;
+    height: 400px;
+}
+
+.townlist{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

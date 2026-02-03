@@ -1,11 +1,140 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>事業内容</title>
-</head>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Business Activities{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/business_activities.css' %}">
+<link rel="stylesheet" href="{% static 'css/contact_recruit_cta.css' %}">
+<link rel="stylesheet" href="{% static 'css/contact_cta.css' %}">{% endblock %}
+
+{% block body %}
 <body>
-    
+    <div class="recruit-header">
+        <div class="title">
+            <h2>事業内容</h2>
+            <p>-Business Activities-</p>
+        </div>  
+    </div> 
+    <body>
+  <section class="service-wrapper">
+
+    <h2 class="main-title">今すぐ<span class="green">相談</span>・<span class="blue">即対応</span>で安心！<br>お客様から選ばれ続ける<span class="red">3つ</span>のおすすめポイントを紹介！</h2>
+
+    <div class="point-box">
+      <div class="point-number-background">
+        <div class="point-number">1</div>
+            <h3 class="point-title">他より素早い対応</h3>
+        </div>
+
+        <div class="point-lead-box">
+            <div class="point1">
+            <p class="point-lead">水のトラブル すぐに駆け付けます！</p>
+            <p class="tel">電話番号<br><span class="tel-number">019-600-0000</span></p>
+            </div>
+            <img src="{% static 'images/worker1.jpg' %}" alt="電話アイコン" class="phone-icon">
+        </div>
+        <div class="point1-description">
+            <h2>困ったらまずは電話で相談！</h2>
+            <p>トイレや台所の詰まり、水道管の破損などのトラブルを解決いたします。
+            お電話やこのサイトからお問い合わせできます！
+            配管・詰まりなどお任せください。</p>
+        </div>
+
+        <div class="contact-cta-right">
+            <a href="{% url 'main:inquiry' %}" class="contact-cta-btn">お問い合わせはこちら</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="point-box">
+        <div class="point-number-background">
+            <div class="point-number">2</div>
+            <h3 class="point-title">実績多数で安心感</h3>
+        </div>
+      <p class="point-lead2">私たちは様々なサービスでお客様の依頼にお応えしております。</p>
+
+      <div class="image-list">
+        <div class="img-item">
+            <img src="{% static 'images/kouzi1.webp' %}" alt="電話アイコン" class="phone-icon">
+            <p>井戸ポンプ修理・交換の様子</p>
+        </div>
+        <div class="img-item">
+            <img src="{% static 'images/kouzi2.png' %}" alt="電話アイコン" class="phone-icon">
+            <p>漏水調査・修理の様子</p>
+        </div>
+      </div>
+
+
+      <p class="allserves">お客様へのサービス内容一覧</p>
+      <div class="alllist">
+        <ul class="service-list">
+        <li>水道管凍結修理</li>
+        <li>井戸ポンプ修理・交換</li>
+        <li>給排水配管替工事</li>
+        <li>トイレ交換</li>
+      </ul>
+      <ul class="service-list">
+        <li>漏水調査・修理</li>
+        <li>給湯機の交換</li>
+        <li>洗面・化粧台交換</li>
+      </ul>
+      <ul class="service-list">
+        <li>灯油配管替工事(タンクも含む)</li>
+        <li>トイレ・台所等　詰り修理</li>
+        <li>浴室・台所等　混合栓交換</li>
+      </ul>
+      </div>
+
+      <p class="onpu">上記にないものでも気軽にご相談ください♪</p>
+
+      <div class="contact-cta-right">
+            <a href="{% url 'main:inquiry' %}" class="contact-cta-btn">お問い合わせはこちら</a>  
+        </div>
+    </div>
+
+    <div class="point-box">
+      <div class="point-number-background">
+        <div class="point-number">3</div>
+            <h3 class="point-title">多数の地域で活躍</h3>
+        </div>
+
+        <p class="allserves">私たち早池峰設備工業は、岩手県内の多数の地域に駆け付けます。</p>
+
+        <div class="townlist">
+        
+            <div class="test">
+                <p class="alltown">対象地域一覧</p>
+                <div class="alllist">
+                    <ul class="service-list">
+                        <li>盛岡市</li>
+                        <li>宮古市</li>
+                        <li>大船渡市</li>
+                        <li>二戸市</li>
+                        <li>遠野市</li>
+                        <li>住田町</li>
+                        <li>一関市</li>
+                        <li>陸前高田市</li>
+                    </ul>
+                    <ul class="service-list">
+                        <li>一戸市</li>
+                        <li>八幡平市</li>
+                        <li>滝沢市</li>
+                        <li>雫石市</li> 
+                        <li>奥州市</li>
+                        <li>矢巾市</li>
+                        <li>紫波市</li>
+                        <li>北上市</li>
+                    </ul>
+                </div>
+            </div>
+                <img src="{% static 'images/compatible_area.png' %}" alt="地域画像" class="area_img">
+            
+            </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </section>
 </body>
-</html>
+{% include 'components/contact_recruit_cta.html' %}
+{% endblock %}

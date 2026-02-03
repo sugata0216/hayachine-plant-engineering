@@ -4,6 +4,7 @@
     font-family: '游ゴシック', 'Yu Gothic';
     margin: 0;
     padding: 0;
+    /* outline: 2px red solid; */
 }
 
 html {
@@ -89,13 +90,13 @@ header ul a{
 }
 
 .header-logo{
-    display: block;
+    display: flex;
     flex-direction: column;
 }
 
 .TEL{
     font-size: 18px;
-    padding-left: 230px;
+
 }
 
 header h1{
