@@ -48,7 +48,7 @@ body{
 
 .Message-background{
     width: 60%;
-    padding: 30px;  
+    padding: 20px;  
     font-size: 20px;
 }
 
@@ -110,8 +110,11 @@ body{
 
 .voice-item{
     padding: 24px;
-    text-align: center;
     border-radius: 8px;
+}
+
+.voive-text h3{
+    text-align: center;
 }
 
 .voice-image{
@@ -126,9 +129,6 @@ body{
     margin-bottom: 12px;
 }
 
-.voice-item p{
-    line-height: 1.8;
-}
 
 .Requirements{
     text-align: center;
@@ -162,3 +162,4 @@ body{
   text-align: left;
   font-weight: normal;
 }
+
