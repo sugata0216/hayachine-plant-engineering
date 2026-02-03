@@ -1,8 +1,8 @@
 let currentIndex = 0;
 const slides = [
     { image: 'slide1.png', url: '/' },  // ニュースページへ
-    { image: 'slide2.jpg', url: '/business_activities/' },  // 事業内容ページへ
-    { image: 'slide3.jpeg', url: '/recruitment/' }  // 採用情報ページへ
+    { image: 'slide2.png', url: '/business_activities/' },  // 事業内容ページへ
+    { image: 'slide3.png', url: '/recruitment/' }  // 採用情報ページへ
 ];
 
 function updateCarousel() {
