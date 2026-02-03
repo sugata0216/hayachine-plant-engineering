@@ -1,3 +1,4 @@
+{% load static %}
 <section class="contact-recruit-cta-section">
     <div class="contact-recruit-cta-container">
         <div class="contact-recruit-cta-left">
@@ -10,8 +11,8 @@
         </div>
         
         <div class="contact-recruit-cta-right">
-            <a href="#" class="contact-recruit-cta-btn">お問い合わせはこちら</a>
-            <a href="#" class="contact-recruit-cta-btn">採用情報はこちら</a>
+            <a href="{% url 'main:inquiry' %}" class="contact-recruit-cta-btn">お問い合わせはこちら</a>
+            <a href="{% url 'main:recruitment' %}" class="contact-recruit-cta-btn">採用情報はこちら</a>
         </div>
     </div>
 </section>

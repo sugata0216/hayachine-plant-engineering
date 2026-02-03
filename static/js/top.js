@@ -1,8 +1,8 @@
 let currentIndex = 0;
 const slides = [
-    'slide1.png',
-    'slide2.jpg',
-    'slide3.jpeg'
+    { image: 'slide1.png', url: '/' },  // ニュースページへ
+    { image: 'slide2.jpg', url: '/business_activities/' },  // 事業内容ページへ
+    { image: 'slide3.jpeg', url: '/recruitment/' }  // 採用情報ページへ
 ];
 
 function updateCarousel() {
@@ -13,10 +13,10 @@ function updateCarousel() {
     const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
     const nextIndex = (currentIndex + 1) % slides.length;
     
-    // 各スライドの画像を更新
-    slideElements[0].querySelector('img').src = `/static/images/${slides[prevIndex]}`;
-    slideElements[1].querySelector('img').src = `/static/images/${slides[currentIndex]}`;
-    slideElements[2].querySelector('img').src = `/static/images/${slides[nextIndex]}`;
+    // 各スライドの画像とリンクを更新
+    updateSlideElement(slideElements[0], slides[prevIndex]);
+    updateSlideElement(slideElements[1], slides[currentIndex]);
+    updateSlideElement(slideElements[2], slides[nextIndex]);
     
     indicators.forEach((dot, index) => {
         if (index === currentIndex) {
@@ -25,6 +25,17 @@ function updateCarousel() {
             dot.classList.remove('active');
         }
     });
+}
+
+function updateSlideElement(element, slide) {
+    const img = element.querySelector('img');
+    img.src = `/static/images/${slide.image}`;
+    
+    // クリックイベントを設定
+    element.style.cursor = 'pointer';
+    element.onclick = function() {
+        window.location.href = slide.url;
+    };
 }
 
 function nextSlide() {
