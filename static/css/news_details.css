@@ -2,7 +2,7 @@
 .news-detail-main {
     background-color: #ffffff;
     padding: 30px 20px;
-    min-height: 60vh;
+    min-height: 60vh; /* コンテンツが少なくても一定の高さを保つ */
 }
 
 .news-detail-container {
@@ -71,7 +71,7 @@
 
 .news-detail-back {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; /* 子要素を右端に配置 */
     margin-top: 40px;
 }
 
@@ -93,10 +93,6 @@
     color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.back-button:active {
-    transform: translateY(0);
 }
 
 .news-detail-divider-end {

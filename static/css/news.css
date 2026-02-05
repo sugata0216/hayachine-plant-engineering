@@ -55,16 +55,16 @@
 .flex .contact-cta-btn {
     position: absolute;
     right: 5rem;
-    top: 50%;
+    top: 50%; /* 上端から50%の位置 */
     transform: translateY(-50%);
 }
 
 .flex .contact-cta-btn:hover {
-    transform: translateY(-50%) translateY(-2px);
+    transform: translateY(-50%) translateY(-2px); /* 垂直中央配置を保ちつつ、さらに2px上に移動 */
 }
 
 .flex .contact-cta-btn:active {
-    transform: translateY(-50%) translateY(4px);
+    transform: translateY(-50%) translateY(4px); /* 垂直中央配置を保ちつつ、4px下に移動（押し込まれた効果） */
 }
 
 .news-title {

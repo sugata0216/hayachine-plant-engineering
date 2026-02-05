@@ -1,6 +1,7 @@
 /* お問い合わせ・採用情報CTAセクション */
 .contact-recruit-cta-section {
     padding: 30px 20px;
+    background-color: white;
 }
 
 .contact-recruit-cta-container {
@@ -42,7 +43,6 @@
 }
 
 .contact-recruit-cta-right {
-    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -86,7 +86,6 @@
     font-size: 16px;
     margin-top: 10px;
     display: inline-block;
-    transition: color 0.3s;
 }
 .business-hours-link:hover {
     color: #0044aa;
