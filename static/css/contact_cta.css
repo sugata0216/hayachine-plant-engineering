@@ -13,7 +13,7 @@
 }
 
 .contact-cta-left {
-    flex: 1;
+    flex: 1; /* 余っているスペースを、同じ指定の要素と均等に分け合って広がる */
 }
 
 .contact-cta-title {
@@ -25,7 +25,7 @@
 
 .contact-cta-phone {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* 子要素を縦方向に並べる */
 }
 
 .phone-number {
@@ -49,16 +49,11 @@
     font-size: 16px;
     margin-top: 10px;
     display: inline-block;
-    transition: color 0.3s;
 }
 
 .business-hours-link:hover {
     color: #0044aa;
     text-decoration: underline;
-}
-
-.contact-cta-right {
-    flex: 0 0 auto;
 }
 
 .contact-cta-btn {
@@ -70,24 +65,24 @@
     border-radius: 50px;
     font-size: 24px;
     font-weight: bold;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+    transition: all 0.3s ease; /* すべてのプロパティの変化を0.3秒かけて滑らかに */
+    white-space: nowrap; /* テキストを改行させない */
     box-shadow: 
-        0 8px 0 #007a18,
-        0 10px 20px rgba(0, 0, 0, 0.3);
+        0 8px 0 #007a18, /* 下に8pxずれた濃い緑の影 */
+        0 10px 20px rgba(0, 0, 0, 0.3); /* 下に10pxずれた、20pxぼかしの黒い影 */
 }
 
 .contact-cta-btn:hover {
     background-color: #00dd4d;
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Y軸方向に-2px移動（上に持ち上がる） */
     box-shadow: 
         0 10px 0 #007a18,
         0 12px 25px rgba(0, 0, 0, 0.4);
 }
 
 .contact-cta-btn:active {
-    transform: translateY(4px);
+    transform: translateY(4px); /* Y軸方向に4px移動（下に押し込まれる） */
     box-shadow: 
-        0 4px 0 #007a18,
-        0 6px 12px rgba(0, 0, 0, 0.2);
+        0 4px 0 #007a18, /* 底面の影を4pxに縮小（押し込まれた状態） */
+        0 6px 12px rgba(0, 0, 0, 0.2); /* ドロップシャドウも縮小して押された感を表現 */
 }

@@ -3,7 +3,7 @@
     /* ブラウザごとのデフォルト余白（body, h1, p など）を消す*/
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* paddingとborderをwidth/heightに含める計算方法 */
 }
 html, body {
     overflow-x: hidden; /* 横スクロールバーを非表示 */
@@ -52,7 +52,7 @@ html, body {
 .carousel-slide.active {
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 10; /* 重ね順を10に設定（他のスライドより前面に表示） */
     opacity: 1;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
@@ -67,7 +67,7 @@ html, body {
     transform: translateX(-85%);
     z-index: 5;
     opacity: 0.7;
-    filter: brightness(0.7);
+    filter: brightness(0.7); /* 明るさを70%にする（暗めに表示） */
 }
 
 /* 右側のチラ見せ画像 */
@@ -81,7 +81,7 @@ html, body {
 
 .carousel-slide.prev:hover,
 .carousel-slide.next:hover {
-    opacity: 0.9;
+    opacity: 0.9; /* 不透明度を90%に上げる（少し明るく表示） */
     cursor: pointer;
 }
 
@@ -90,8 +90,8 @@ html, body {
     position: absolute;
     top: 50%; /* ラッパーの中央 */
     transform: translateY(-130%);
-    background: none;
-    border: none;
+    background: none; /* 背景を透明に */
+    border: none; /* 枠線を消す */
     outline: none; /* クリック時の枠線を消す */
     width: auto;
     height: auto;
@@ -144,7 +144,7 @@ html, body {
 
 .indicator-dot.active {
     background-color: #000000;
-    transform: scale(1.2);
+    transform: scale(1.2); /* 1.2倍に拡大 */
 }
 /* 相談・お問い合わせセクション */
 .consultation-section {
@@ -222,6 +222,7 @@ html, body {
 
 .point-text {
     font-size: 17px;
+    font-weight: bold;
 }
 
 .consultation-buttons {
@@ -356,14 +357,14 @@ html, body {
 
 .news-item {
     display: grid;
-    grid-template-columns: 150px 200px 1fr;
+    grid-template-columns: 150px 200px 1fr; /* 3列のグリッド：カテゴリー、日付、タイトル残り全部 */
     gap: 30px;
     align-items: center;
     padding: 25px 40px;
     border-bottom: 2px solid black;
     transition: background-color 0.3s;
     text-decoration: none;
-    color: inherit;
+    color: inherit; /* 親要素の文字色を継承 */
 }
 
 .news-item:hover {
@@ -425,6 +426,8 @@ html, body {
     border-bottom: 3px solid white;
     display: inline-block;
 }
+
+/* ヘッダー内の子要素の共通設定 */
 .company-header > * {
     max-width: 90%;
     margin-left: auto;
@@ -474,7 +477,7 @@ html, body {
 .service-left,
 .service-right {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* 2列のグリッド：各列が均等（1:1） */
     gap: 40px;
     align-items: center;
 }
@@ -567,22 +570,6 @@ html, body {
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
-}
-
-.recruitment-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px, 80px 80px;
-    background-position: 0 0, 40px 40px;
-    opacity: 0.3;
-    pointer-events: none;
 }
 
 .recruitment-content {
